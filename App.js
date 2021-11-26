@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Home from './screens/home';
+import SignUp from './screens/signUp';
+import { useFonts } from 'expo-font';
+import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import AppLoading from 'expo-app-loading';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+ const [fontsLoaded] = useFonts({
+   Roboto_400Regular,
+   Roboto_700Bold
+ }); //carregamento das fonts da google
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+ if(!fontsLoaded){
+  return <AppLoading/> //enquanto fonts nao carregar, segura na splash
+ }
+
+  return (
+    <NavigationContainer> 
+                       {/* nessa parte ele tira o menu */}
+      <Stack.Navigator  screenOptions={{ headerShown: false }}> 
+        <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen name="SignUp" component={SignUp}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
