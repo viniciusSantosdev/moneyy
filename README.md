@@ -6,3 +6,6 @@ React Navigation using Expo
 - yarn add @react-navigation/native 
 - expo install react-native-screens react-native-safe-area-context (dependencies) 
 - yarn add @react-navigation/native-stack 
+
+Firebase
+- expo install firebase
