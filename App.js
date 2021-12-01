@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from './screens/home';
-import SignUp from './screens/signUp';
+import Home from './screens/home/home';
+import SignUp from './screens/signUp/signUp';
 import { useFonts } from 'expo-font';
 import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
