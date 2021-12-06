@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './screens/home/home';
 import SignUp from './screens/signUp/signUp';
+import Profile from './screens/profile/profile';
 import { useFonts } from 'expo-font';
 import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
@@ -25,6 +26,7 @@ export default function App() {
       <Stack.Navigator  screenOptions={{ headerShown: false }}> 
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="SignUp" component={SignUp}/>
+        <Stack.Screen name="Profile" component={Profile}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
