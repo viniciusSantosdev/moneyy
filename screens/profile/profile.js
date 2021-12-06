@@ -15,6 +15,7 @@ export default function profile() {
 
   //   funcao para buscar os dados do usuario atraves do token
   async function loadProfile() {
+    // fetch = buscar, serve basicamente para fazer request e response
     const response = await fetch(
       `https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=${token}`
     );
